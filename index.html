@@ -12,6 +12,29 @@
         gtag('js', new Date());
 
         gtag('config', 'G-KK3ZGG950P');
+
+        // Scroll depth tracking
+        (function() {
+            var scrollThresholds = [25, 50, 75, 90];
+            var sentThresholds = {};
+
+            window.addEventListener('scroll', function() {
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                var scrollHeight = document.documentElement.scrollHeight;
+                var clientHeight = document.documentElement.clientHeight;
+                var scrollPercent = Math.round((scrollTop / (scrollHeight - clientHeight)) * 100);
+
+                scrollThresholds.forEach(function(threshold) {
+                    if (scrollPercent >= threshold && !sentThresholds[threshold]) {
+                        gtag('event', 'scroll_depth', {
+                            'percent': threshold
+                        });
+                        sentThresholds[threshold] = true;
+                        console.log('Scroll Depth Tracked: ' + threshold + '%');
+                    }
+                });
+            }, { passive: true });
+        })();
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -405,7 +428,16 @@
                             </li>
                             <li class="flex gap-4">
                                 <span class="bg-blue-600 text-white w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold">2</span>
-                                <p>Transfer your JMPT, BTC, or Solana earnings to your Nexo wallet</p>
+                                <div>
+                                    <p class="mb-2">Transfer your earnings to Nexo. Note that some coins must be exchanged externally first:</p>
+                                    <ul class="text-sm space-y-1 list-disc list-inside opacity-90">
+                                        <li><strong>Direct Deposit:</strong> BTC, ETH, Solana (SOL)</li>
+                                        <li><strong>Exchange to BNB:</strong> JMPT</li>
+                                        <li><strong>Exchange to Solana:</strong> GRASS, DAWN</li>
+                                        <li><strong>Exchange to USDT:</strong> Swash</li>
+                                    </ul>
+                                    <p class="mt-2 text-xs text-blue-200 italic">* For coins not directly supported, swap them to a supported asset (like BNB, SOL, or USDT) before depositing.</p>
+                                </div>
                             </li>
                             <li class="flex gap-4">
                                 <span class="bg-blue-600 text-white w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold">3</span>
