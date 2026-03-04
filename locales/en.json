@@ -214,5 +214,18 @@
       "Swash Dashboard": "Swash Dashboard",
       "Nexo Interface": "Nexo Interface"
     }
+  },
+  "templates": {
+    "hg_step1": "Create an account with {a0}",
+    "hg_step3": "Sign up for {a0} and connect your crypto wallet (e.g., MetaMask)",
+    "grass_step1": "Register on the {a0}",
+    "dawn_step1": "Visit the {a0}",
+    "swash_step1": "Install the extension from the {a0}",
+    "hg_desc": "Honeygain is the world's largest crowdsourced residential proxy network. Share your unused internet and earn credits. Turn on {strong0} to get {strong1} on every payout.",
+    "hg_tip": "Standard payout starts at $20, but with JumpTask mode you can cash out from just {strong0}.",
+    "swash_ref": "Our referral link uses a {strong0} split, so invited users (you) get the larger share.",
+    "nexo_intro": "Don't let your earned crypto sit idle. Move rewards to {strong0} and earn up to 15% annually to add a second passive-income stream.",
+    "nexo_reward": "Join through our link and you may qualify for up to {strong0}, depending on your portfolio balance.",
+    "nexo_daily": "Earn up to 15% APR with interest paid {strong0}"
   }
 }
