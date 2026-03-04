@@ -842,15 +842,33 @@
             <div class="flex justify-center gap-6 text-slate-400 text-xs">
                 <p>© 2026 Passive Income Guide. All Rights Reserved.</p>
             </div>
+            <div class="mt-8 pt-6 border-t border-slate-100 flex flex-col items-center gap-2">
+                <label for="language-switcher" class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Language</label>
+                <select id="language-switcher" class="min-w-[220px] rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                    <option value="auto">Auto (Browser)</option>
+                    <option value="en">English</option>
+                    <option value="zh-CN">简体中文</option>
+                    <option value="es">Español</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="ar">العربية</option>
+                    <option value="pt">Português</option>
+                    <option value="fr">Français</option>
+                    <option value="ru">Русский</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="ja">日本語</option>
+                </select>
+            </div>
         </div>
     </footer>
 
+    <script src="./scripts/i18n.js" defer></script>
     <script>
         // Copy to clipboard function
         function copyToClipboard(text, element) {
             navigator.clipboard.writeText(text).then(() => {
                 const originalText = element.innerHTML;
-                element.innerHTML = "Copied!";
+                const copiedText = (window.__i18nMessages && window.__i18nMessages.copied) || "Copied!";
+                element.innerHTML = copiedText;
                 setTimeout(() => {
                     element.innerHTML = originalText;
                 }, 2000);
