@@ -49,6 +49,23 @@
         .gradient-bg {
             background: #f0f9ff;
         }
+        .hero-bg {
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%);
+        }
+        .glow-text {
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
+        }
+        .neon-border {
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3), inset 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+        @keyframes subtle-pulse {
+            0% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+            100% { opacity: 0.8; transform: scale(1); }
+        }
+        .pulse-once {
+            animation: subtle-pulse 2s infinite ease-in-out;
+        }
         .service-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -96,14 +113,24 @@
 <body class="text-slate-800 bg-white">
 
     <!-- Hero Section -->
-    <section class="pt-10 pb-8 gradient-bg relative overflow-hidden">
+    <section class="pt-10 pb-8 hero-bg relative overflow-hidden border-b-4 border-blue-600/30">
         <div id="particles-js" class="absolute inset-0 z-0"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
-            <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight leading-tight mx-auto">
-                No surveys. No ads. No work.<br>
-                Earn crypto <span class="text-blue-600">automatically</span> by doing nothing.<br>
-                Discover 5 rare services that pay you to wait 👇
+            <div class="inline-block bg-blue-600/20 text-blue-400 border border-blue-500/30 px-3 py-1 rounded-full text-xs font-bold mb-4 tracking-widest uppercase pulse-once">
+                🚀 Exclusive Passive Income List
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tighter leading-tight mx-auto text-white">
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 glow-text mb-2">No Surveys. No Ads. No Work.</span>
+                <span class="block text-2xl md:text-3xl font-bold text-slate-300">
+                    Earn crypto <span class="text-blue-500 underline decoration-blue-500/50 decoration-4 underline-offset-8">automatically</span> by doing nothing.
+                </span>
             </h1>
+            <div class="mt-6 flex justify-center items-center gap-2 text-blue-400 font-bold text-sm md:text-base">
+                <span class="w-12 h-[1px] bg-blue-500/30"></span>
+                <span>Discover 5 Rare Passive Services</span>
+                <span class="w-12 h-[1px] bg-blue-500/30"></span>
+            </div>
+            <div class="mt-2 bounce text-2xl">👇</div>
         </div>
     </section>
 
@@ -851,7 +878,7 @@
                     }
                 },
                 "color": {
-                    "value": "#3b82f6"
+                    "value": "#60a5fa"
                 },
                 "shape": {
                     "type": "circle",
@@ -867,7 +894,7 @@
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#3b82f6",
+                    "color": "#60a5fa",
                     "opacity": 0.2,
                     "width": 1
                 },
